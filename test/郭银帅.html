@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .banner {
+            margin-left: 100px;
+            margin-top: 100px;
+        }
+        * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    table {
+      width: 600px;
+      border-collapse: collapse;
+    }
+    
+    thead {
+      background-color: #8a2be2;
+    }
+    
+    tbody {
+        background-color: #ffc0cb;
+      text-align: center;
+    }
+    
+    tbody td {
+      width: ;
+      height: 20px;
+    }
+    </style> 
+    <script src="jquery-1.12.4.min.js"></script>  
+    
+       
+    
+</head>
+<body> 
+    <div class="banner">
+        <div>
+            请输入姓名:
+            <input type="text" name="" id="txt">   
+        </div>
+        <div>
+            请输入邮箱:
+            <input type="text" name="" id="txt">
+        </div>
+        <div>
+            请输入姓名:
+            <input type="text" name="" id="txt">
+        </div>
+        <div>
+            请输入姓名:
+            <input type="text" name="" id="txt">
+        </div>
+
+        <!-- 按钮 -->
+        <div>
+            <button id="btn">按钮</button>
+        </div>
+        <!-- 表格 -->
+        <div class="box">
+            <table border="1">
+                <thead>
+                    <tr id="title">
+                        <!-- 放置表头数据 -->
+                    </tr>
+                </thead>
+                <tbody id="body">
+                     <!-- 放置表格主体数据 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+     <script>
+          var heads = ["姓名", "邮箱", "手机","地址"];
+
+            var title = document.getElementById('title');
+            var body = document.getElementById('body');
+
+        //  2 根据heads中的元素个数创建th并设置内容
+            for (var i = 0; i < heads.length; i++) {
+             var th = document.createElement('th');
+                title.appendChild(th);
+                th.innerText = heads[i];
+             }
+
+         //  3 根据datas创建tbody中的结构
+            // for (i = 0; i < datas.length; i++) {
+            // // 创建tr
+            //  var tr = document.createElement('tr');
+            //  body.appendChild(tr);
+
+            //     // 根据datas[i]的属性个数创建td
+            //      for (var k in datas[i]) {
+            //      var td = document.createElement('td');
+            //         tr.appendChild(td);
+            //         td.innerText = datas[i][k];
+            //     }
+            // }
+
+            // 元素获取
+            var txt = document.getElementById("txt");
+             var btn = document.getElementById("btn");
+
+              btn.onclick = function () {
+                if (txt.value == "") {
+                alert("请输入内容");
+            } else {
+      //3 根据当前用户输入的内容，进行li的创建
+            var li = document.createElement("li");
+            setText(li, txt.value);
+
+     </script>  
+</body>
+</html>
